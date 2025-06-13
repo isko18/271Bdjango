@@ -36,3 +36,18 @@ class Setting(models.Model):
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
+        
+        
+class Gallary(models.Model):
+    image = models.ImageField(
+        upload_to="image/",
+        verbose_name="Изображение"
+    )
+    
+    def __str__(self):
+        return str(self.image)
+    
+    class Meta:
+        verbose_name = "Галерея"
+        verbose_name_plural = "Галерея"
+        

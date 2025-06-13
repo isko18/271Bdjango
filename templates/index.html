@@ -68,7 +68,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="#home" class="navbar-brand"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+                        <a href="#home" class="navbar-brand"><img src="{{ setting.logo.url }}" width="110px" height="110px" alt="logo"></a>
                     </div>
                     <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
                         <ul id="nav" class="nav navbar-nav cl-effect-11">
@@ -89,8 +89,8 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-6 col-xs-12">
                         <div class="welcome-text">
-                            <h1>WELCOME TO APPKEKO</h1>
-                            <h3>Software Try 14 Days</h3>
+                            <h1>{{ setting.title }}</h1>
+                            <h3>{{ setting.description }}</h3>
                             <p class="margin-bottom">Download For</p>
                             <div class="os-menu">
                                 <ul>
@@ -201,52 +201,19 @@
                 </div>
             </div>
             <div class="row">
+                {% for gallarys in gallary %}
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/1.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/1.jpg' %}" alt="gallary"></a>
+                        <a href="{{ gallarys.image.url }}" class="venobox" data-gall="screenshot"><img src="{{ gallarys.image.url }}" alt="gallary"></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/2.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/2.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/3.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/3.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/4.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/4.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/5.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/5.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/6.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/6.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/7.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/7.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-gallary-item text-center">
-                        <a href="{% static 'img/gallary/8.jpg' %}" class="venobox" data-gall="screenshot"><img src="{% static 'img/gallary/8.jpg' %}" alt="gallary"></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
     <!--END GALLARY AREA-->
 
-    <!--PRICE AREA-->
+    <!--PRICE AREA-->м
     <section class="price-area section-padding blue-bg" id="price">
         <div class="container">
             <div class="row">
@@ -447,8 +414,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                    <div class="google-map">
-                        <div id="map" style="height:370px; width:100%;"></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.008550213332!2d72.79847278885498!3d40.51930210000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdaf51e4e11011%3A0x2dd3bbd34364f3e1!2zSVQt0LrRg9GA0YHRiyDQmtGD0YDRgdGLINC_0YDQvtCz0YDQsNC80LzQuNGA0L7QstCw0L3QuNGPINCe0YggR2Vla3M!5e0!3m2!1sru!2skg!4v1749817073764!5m2!1sru!2skg" width="100%" height="370px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
